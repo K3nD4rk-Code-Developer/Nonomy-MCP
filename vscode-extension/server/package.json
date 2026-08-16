@@ -1,0 +1,5 @@
+{
+  "name": "nonomy-mcp-server-embedded",
+  "private": true,
+  "type": "module"
+}

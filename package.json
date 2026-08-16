@@ -1,0 +1,45 @@
+{
+  "name": "nonomy-mcp",
+  "version": "1.0.0",
+  "description": "Nonomy MCP — an MCP server for interacting with Roblox Game Clients",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "nonomy-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "connector.luau",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/K3nD4rk-Code-Developer/Nonomy-MCP.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "postbuild": "node -e \"console.log('Build complete: dist/index.js')\"",
+    "start": "node dist/index.js",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "lua",
+    "roblox",
+    "mcp",
+    "llm",
+    "automation"
+  ],
+  "publisher": "Nonomy-Development-Team",
+  "packageManager": "pnpm@10.27.0",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.1",
+    "ws": "^8.18.3",
+    "zod": "^4.3.4"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "@types/ws": "^8.18.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
