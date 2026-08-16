@@ -2,7 +2,7 @@
   "name": "nonomy-mcp-vscode",
   "displayName": "Nonomy MCP",
   "description": "Runs the Nonomy MCP Roblox bridge server and shows its live dashboard as a VS Code tab instead of a browser window.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "publisher": "Nonomy-Development-Team",
   "repository": {
     "type": "git",
