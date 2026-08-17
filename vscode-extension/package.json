@@ -1,61 +1,61 @@
 {
-  "name": "nonomy-mcp-vscode",
-  "displayName": "Nonomy MCP",
-  "description": "Runs the Nonomy MCP Roblox bridge server and shows its live dashboard as a VS Code tab instead of a browser window.",
-  "version": "1.0.0",
-  "publisher": "Nonomy-Development-Team",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/K3nD4rk-Code-Developer/Nonomy-MCP.git"
-  },
+  "name": "roblox-mcp-dashboard",
+  "displayName": "Roblox MCP Dashboard",
+  "description": "Auto-opens the Roblox MCP dashboard in a VS Code tab whenever a Roblox client connects.",
+  "version": "0.1.0",
+  "publisher": "local",
+  "private": true,
   "engines": {
     "vscode": "^1.85.0"
   },
   "categories": [
     "Other"
   ],
-  "keywords": [
-    "lua",
-    "roblox",
-    "mcp",
-    "dashboard"
-  ],
   "activationEvents": [
     "onStartupFinished"
   ],
   "main": "./dist/extension.js",
+  "extensionDependencies": [
+    "vscode.simple-browser"
+  ],
   "contributes": {
     "commands": [
       {
-        "command": "nonomyMcp.openDashboard",
-        "title": "Nonomy MCP: Open Dashboard",
-        "icon": "$(radio-tower)"
-      },
-      {
-        "command": "nonomyMcp.restartServer",
-        "title": "Nonomy MCP: Restart Server"
-      },
-      {
-        "command": "nonomyMcp.showLogs",
-        "title": "Nonomy MCP: Show Server Logs"
+        "command": "robloxMcpDashboard.show",
+        "title": "Roblox MCP: Show Dashboard",
+        "icon": "$(dashboard)"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Roblox MCP Dashboard",
+      "properties": {
+        "robloxMcpDashboard.port": {
+          "type": "number",
+          "default": 16384,
+          "description": "Port the roblox-mcp dashboard HTTP server listens on. Must match ROBLOX_MCP_PORT if you've changed it from the default."
+        },
+        "robloxMcpDashboard.pollIntervalMs": {
+          "type": "number",
+          "default": 3000,
+          "description": "How often (ms) to poll /api/status to detect Roblox client connections."
+        },
+        "robloxMcpDashboard.autoOpen": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically open the dashboard tab when a Roblox client connects (and no tab is currently open)."
+        }
+      }
+    }
   },
   "scripts": {
-    "vscode:prepublish": "npm run build",
-    "build": "tsc -p ./ && node scripts/copy-server.js",
-    "watch": "tsc -watch -p ./",
-    "package": "npm run build && npx @vscode/vsce package"
+    "compile": "tsc -p ./",
+    "watch": "tsc -w -p ./",
+    "vscode:prepublish": "npm run compile",
+    "package": "vsce package"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/vscode": "^1.85.0",
-    "typescript": "^5.9.3",
-    "@vscode/vsce": "^3.0.0"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.25.1",
-    "ws": "^8.18.3",
-    "zod": "^4.3.4"
+    "typescript": "^5.4.0"
   }
 }

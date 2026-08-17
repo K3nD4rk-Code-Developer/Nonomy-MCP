@@ -3,10 +3,9 @@
   "tasks": [
     {
       "type": "npm",
-      "script": "build",
-      "group": { "kind": "build", "isDefault": true },
-      "problemMatcher": ["$tsc"],
-      "label": "npm: build"
+      "script": "compile",
+      "problemMatcher": "$tsc",
+      "group": { "kind": "build", "isDefault": true }
     }
   ]
 }

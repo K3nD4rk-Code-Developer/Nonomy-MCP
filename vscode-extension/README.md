@@ -1,44 +1,36 @@
-# Nonomy MCP (VS Code extension)
+# Roblox MCP Dashboard (VS Code extension)
 
-Runs the Nonomy MCP bridge server in the background and shows its live
-dashboard as a VS Code editor tab (via the Webview API) instead of a browser
-window at `http://localhost:16384`.
+Auto-opens the roblox-mcp dashboard as a chrome-less tab inside VS Code — no URL bar, similar
+to "Simple Browser" — whenever a Roblox client connects.
 
-## How it works
+## Behavior
 
-- On activation, the extension forks the bundled server (`server/dist/index.js`,
-  copied from the root project's `dist/` at build time) as a child process.
-- **Nonomy MCP: Open Dashboard** (also available from the status bar item)
-  opens a webview panel, waits for the server's HTTP API to come up, fetches
-  its existing status page (`GET /`), and injects a `<base>` tag + CSP so the
-  page's own relative `fetch('/api/status')` calls and asset requests resolve
-  against `http://localhost:16384` from inside the webview sandbox. The
-  server's dashboard markup itself is untouched — this extension doesn't
-  duplicate it.
-- **Nonomy MCP: Restart Server** kills and relaunches the child process.
-- **Nonomy MCP: Show Server Logs** opens the "Nonomy MCP" output channel
-  (the server's stdout/stderr).
+- Polls `http://127.0.0.1:<port>/api/status` (same endpoint the dashboard itself polls) every
+  `robloxMcpDashboard.pollIntervalMs` (default 3s).
+- On the transition from **no client connected** to **a client connected**, it automatically
+  opens (or reveals) the dashboard tab.
+- If you **close the tab yourself**, auto-open is suppressed — it will not pop back up on
+  future connects.
+- Click the `Roblox MCP` status bar item (bottom right), or run **"Roblox MCP: Show Dashboard"**
+  from the command palette, to reopen it manually — doing so also re-arms auto-open for future
+  connects.
 
-## Developing
+## Settings
 
-```
+| Setting | Default | Description |
+| --- | --- | --- |
+| `robloxMcpDashboard.port` | `16384` | Must match `ROBLOX_MCP_PORT` if you've changed it from the default. |
+| `robloxMcpDashboard.pollIntervalMs` | `3000` | How often to poll `/api/status`. |
+| `robloxMcpDashboard.autoOpen` | `true` | Master switch for the auto-open behavior. |
+
+## Running it
+
+```sh
+cd vscode-extension
 npm install
-npm run build   # tsc compile + copies ../dist into server/dist
+npm run compile
 ```
 
-Then press **F5** (Run Extension) — this launches an Extension Development
-Host window with the extension active. Run the command
-**Nonomy MCP: Open Dashboard** from the Command Palette (Ctrl+Shift+P).
-
-If you change the root server (`../src/index.ts`), rebuild it first
-(`npm run build` in the repo root) then rerun `npm run build` here (or just
-`node scripts/copy-server.js`) to pick up the new `dist/index.js`.
-
-## Packaging as a .vsix
-
-```
-npm run package
-```
-
-Produces a `.vsix` you can install via the Command Palette →
-**Extensions: Install from VSIX...**, or `code --install-extension <file>.vsix`.
+Then press **F5** (with this folder open in VS Code) to launch an Extension Development Host
+with it loaded, or run `npx vsce package` to produce a `.vsix` you can install via
+**Extensions: Install from VSIX...**.

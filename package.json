@@ -1,38 +1,52 @@
 {
-  "name": "nonomy-mcp",
+  "name": "roblox-mcp-server",
   "version": "1.0.0",
-  "description": "Nonomy MCP — an MCP server for interacting with Roblox Game Clients",
+  "description": "An MCP server for interacting with Roblox Game Clients",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "nonomy-mcp": "dist/index.js"
+    "roblox-mcp": "dist/index.js"
   },
   "files": [
     "dist",
+    "scripts/update.mjs",
     "connector.luau",
-    "README.md"
+    "README.md",
+    "skills"
   ],
+  "scripts": {
+    "build:connector": "darklua process connector-src/init.luau connector.luau",
+    "build": "node scripts/build-server.mjs",
+    "build:all": "npm run build:connector && npm run build",
+    "test": "npm run build:all && node --test tests/*.test.mjs && luau tests/connector-modules.test.luau",
+    "dev": "node scripts/dev-server.mjs",
+    "dev:dist": "bun run build && bun scripts/dev-server.mjs --dist",
+    "install:tailscale": "bun scripts/install-tailscale.mjs",
+    "install:harness": "node scripts/install-harnesses-web.mjs",
+    "install:harnesses": "node scripts/install-harnesses-web.mjs",
+    "install:harnesses:cli": "node scripts/run-with-bun.mjs scripts/install-harnesses.mjs",
+    "install:harnesses:web": "node scripts/install-harnesses-web.mjs",
+    "install:harnesses:preview": "node scripts/install-harnesses-web.mjs --preview",
+    "benchmark:roblox-mcp": "npm run build && node benchmarks/roblox-mcp/src/run.mjs",
+    "benchmark:roblox-mcp:check": "npm run build && node benchmarks/roblox-mcp/src/run.mjs --dry-run",
+    "benchmark:roblox-mcp:import": "node benchmarks/roblox-mcp/src/import-capture.mjs",
+    "getscript": "bun scripts/install-harnesses.mjs --get-script",
+    "start": "node dist/index.js",
+    "start:core": "node dist/core.js",
+    "update": "node scripts/update.mjs",
+    "prepare": "bun run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/K3nD4rk-Code-Developer/Nonomy-MCP.git"
+    "url": "git+https://gitlab.com/upio/roblox-executor-mcp.git"
   },
-  "scripts": {
-    "build": "tsc",
-    "postbuild": "node -e \"console.log('Build complete: dist/index.js')\"",
-    "start": "node dist/index.js",
-    "prepare": "npm run build"
-  },
-  "keywords": [
-    "lua",
-    "roblox",
-    "mcp",
-    "llm",
-    "automation"
-  ],
-  "publisher": "Nonomy-Development-Team",
-  "packageManager": "pnpm@10.27.0",
+  "packageManager": "bun@1.3.13",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.25.1",
+    "@opentui/core": "^0.4.1",
     "ws": "^8.18.3",
     "zod": "^4.3.4"
   },
