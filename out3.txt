@@ -1,0 +1,538 @@
+✔ script mapping distinguishes LocalScript from Script by exact class (4.7685ms)
+✔ thread-context source tolerates executors without identity helpers (1.1087ms)
+✔ oversized tool output is preserved in a private temporary artifact (23.5063ms)
+✔ mapping revisions ignore stale progress without dropping source payloads (1.3644ms)
+✔ a different mapping session cannot replace progress without an explicit begin (0.3484ms)
+✔ script hash cache retains historical hashes and indexes replacements (0.5018ms)
+✔ new mapping sessions retain hash cache entries without indexing stale scripts (2.3498ms)
+✔ revisioned tombstones remove active scripts and stale uploads cannot resurrect them (0.6267ms)
+✔ stale source payloads can refresh cache without overwriting newer active source (0.3761ms)
+✔ sustained fast successes remain healthy and cooldowns affect resolved plans (4.8904ms)
+✔ an explicitly requested original provider stays first before ordered fallbacks (0.5571ms)
+✔ an unavailable built-in is not reported as an attempted retry provider (0.4952ms)
+✔ a built-in handshake is reported as an attempted provider (0.3969ms)
+✔ a custom decompiler provider can send JSON and read a nested JSON response (26.5014ms)
+✔ custom request templates reject unknown variables (0.8491ms)
+✔ custom workflow endpoints add a protocol and preserve the BridgeHost token (0.5435ms)
+✔ custom decompiler workflows reject disconnected blocks (0.235ms)
+✔ multiple custom decompiler providers survive settings normalization independently (1.6969ms)
+✔ an explicit empty provider API key clears the stored fallback (0.5711ms)
+✔ Luacid HTTP sends raw bytecode, API options, and an optional bearer key (3.1512ms)
+[Registry] Client registered: bf783c33-268c-4dcb-9a28-3848807c897f (test @ place, http)
+[Registry] Client expired: bf783c33-268c-4dcb-9a28-3848807c897f
+✔ Luacid automatically uses WebSocket when an API key is configured (26.1702ms)
+✔ multiple custom decompiler providers fall through in their configured order (1.2378ms)
+✔ built-in health is client scoped and stale observations are rejected (1.0668ms)
+✔ expired HTTP clients release registry, source-index, and built-in health state (1.9339ms)
+✔ semantic index status formatting uses the canonical completeness value (0.8664ms)
+✔ dashboard settings normalize complete custom themes (1.4679ms)
+✔ dashboard settings reject unsupported values without damaging valid fields (0.3824ms)
+✖ advancing the release also advances manifests and future builds (1188.8625ms)
+✔ a clean commit created during staging is never rewound (790.9528ms)
+✔ a tracked edit made during staging is never overwritten (754.7588ms)
+✔ update status recovers an orphaned active operation (933.2591ms)
+✖ the packed update endpoint enables archive-backed updates without Git metadata (7.4236ms)
+✔ the standalone update worker rejects traversal without deleting the target (120.9051ms)
+✔ a versioned update worker loads its matching release helpers (276.4564ms)
+✔ dashboard updater validates, atomically activates, and health-checks a candidate (1219.8162ms)
+✖ dashboard restart launches the active verified release (1053.5309ms)
+✖ status reporting cannot interrupt a successful release activation (947.7823ms)
+✖ dashboard updater refuses to signal a reused or mismatched core PID (495.117ms)
+✖ a late checkout conflict removes the inactive candidate release (502.3583ms)
+✖ dashboard updater restores the previous build when final startup fails (1197.1526ms)
+✖ dashboard updater rolls back when the final core process cannot spawn (1072.8556ms)
+✖ dashboard updater force-stops a hung candidate before rollback (1511.1644ms)
+✖ release activation remains bootable after crash at after-release-dist (583.5154ms)
+✖ release activation remains bootable after crash at after-release-dependencies (637.2746ms)
+✖ release activation remains bootable after crash at after-checkout (659.8987ms)
+✖ release activation remains bootable after crash at after-release-pointer (646.4541ms)
+✔ autoexec detection resolves the original macOS user when launched through sudo (2.293ms)
+✔ harness installer exposes machine-readable detected targets (1863.0452ms)
+✔ dashboard harness detection skips slow per-process probes (2.8252ms)
+✔ install-only mode selects explicit harnesses and never restarts them (380.445ms)
+✔ normal installs automatically restart supported running harnesses without prompting (1.3739ms)
+✔ macOS harness restarts force-close consented apps before reopening (1.4009ms)
+✔ legacy update entry delegates to the shared staged updater (1.4562ms)
+✔ web installer preview serves harness and skill data and rejects mutations (1438.164ms)
+✔ web installer presents harness, skill, connector, background, and install progress (5.1004ms)
+✔ web installer completes a safe dry-run and exits after success (3753.9622ms)
+✔ web installer waits for harnesses to reopen before reporting success (1.0398ms)
+✖ background service installer supports native managers and on-demand removal in dry runs (0.8592ms)
+✖ background startup status follows each platform's native registration (2.0206ms)
+✖ skill installation targets only compatible detected harnesses (1.2978ms)
+✖ background service installer starts each native manager immediately (9.7868ms)
+✔ launchd setup stops conflicting runtimes before bootstrap and retries transient failures (1.7656ms)
+✔ dashboard startup worker records a completed native-service change (872.2746ms)
+✔ browser installer is the default and the terminal installer remains explicit (0.9318ms)
+✔ background service previews use the pointer-aware stable core bootstrap (0.7422ms)
+✖ packaged Roblox MCP skill enforces modern inspection and execution defaults (1.1209ms)
+✔ dashboard add menu routes harness installs through the client setup API (1.6062ms)
+✔ decompiler add menu shows one custom provider creation option (1.4525ms)
+✔ dashboard exposes Luacid transport, options, and both key links (1.0848ms)
+✔ every dashboard feature script referenced by HTML has a production route (2.8512ms)
+✔ dashboard update control starts and monitors the automatic updater (4.8604ms)
+✔ dashboard settings expose system startup and skill installation controls (2.6318ms)
+✔ legacy server-info is detected for the one-time architecture migration (66.0791ms)
+✔ the background-core server-info shape is never treated as legacy (10.454ms)
+✔ classifies private LAN and Tailscale CGNAT addresses (1.1993ms)
+✔ reads LAN and Tailscale IPs from network interfaces without a CLI (0.9971ms)
+✔ does not treat a Tailscale address as the LAN IP (0.1945ms)
+✔ prefers RFC1918 when multiple public and private addresses exist (1.3419ms)
+✔ local admin token is issued only to same-origin loopback requests (1.3981ms)
+✔ router protects dashboard mutations without blocking relay APIs (0.3537ms)
+✔ local admin API requests require the in-process token (0.4814ms)
+✔ the final MCP process lease terminates managed local decompilers (3001.7491ms)
+✔ same-binary PID reuse cannot preserve a stale MCP lease (1266.1614ms)
+✔ partial atomic-write temp files are ignored by concurrent lease readers (833.384ms)
+✔ termination escalates to force and only drops ownership after death (1142.4296ms)
+✔ a lease acquired during the zero-lease grace period prevents shutdown (1612.0235ms)
+✔ registration intent published after the final zero-lease scan prevents shutdown (1269.2541ms)
+✔ registration intent arriving during the final identity check cancels signaling (1339.5321ms)
+[Decompiler] Failed to start fission lifetime watchdog: spawn failed
+[Decompiler] Failed to start shiny lifetime watchdog: disk full
+[Decompiler] Failed to start fission lifetime watchdog: watchdog exited before initialization (code 1)
+✔ a real relative Node launch can publish a live MCP lease (473.6635ms)
+✔ watchdog startup failure terminates the new provider and removes its record (3.2636ms)
+✔ provider publication failure is fail-safe and never starts a watchdog (0.8498ms)
+✔ a watchdog that spawns then exits before readiness fails safe (2.22ms)
+✔ builds the standard mcpServers recipe for a server root (2.2687ms)
+✔ incomplete release pointers fall back to the stable checkout (62.5306ms)
+✔ the stable adapter bootstrap uses the canonical pointer validator (1.9215ms)
+node:internal/modules/esm/resolve:271
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\Users\Yousif\Projects\Work\Extensions\Nonomy-MCP\benchmarks\roblox-mcp\src\cases.mjs' imported from C:\Users\Yousif\Projects\Work\Extensions\Nonomy-MCP\tests\roblox-mcp-benchmark.test.mjs
+    at finalizeResolution (node:internal/modules/esm/resolve:271:11)
+    at moduleResolve (node:internal/modules/esm/resolve:861:10)
+    at defaultResolve (node:internal/modules/esm/resolve:988:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:697:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:714:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:746:52)
+    at #resolve (node:internal/modules/esm/loader:679:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:599:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:162:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:252:17) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/benchmarks/roblox-mcp/src/cases.mjs'
+}
+
+Node.js v25.9.0
+✖ tests\roblox-mcp-benchmark.test.mjs (283.1572ms)
+✔ concurrent stdio adapters start and share one background core (4105.5367ms)
+✔ --baseurl connects the stdio adapter directly to a remote background core (2271.9776ms)
+✔ an established --baseurl adapter stays on the remote host through core replacement (4556.8544ms)
+✔ an idle adapter proactively recreates its session after core replacement (4111.8281ms)
+✔ --baseurl falls back to one local background core when the remote is unavailable (2122.8202ms)
+✖ adapter waits for an active update lock instead of racing to start the core (2370.3293ms)
+✔ adapter reports an ambiguous interrupted request without replaying it (3772.554ms)
+✔ a healthy adapter transparently replaces an expired idle session (2116.7743ms)
+✔ cancellation notifications are not queued behind long-running requests (1001.9015ms)
+✔ core expires an MCP session after an adapter is killed abruptly (2143.8454ms)
+✖ terminal update deactivates a versioned core and the checkout adapter starts the rebuild (4908.92ms)
+✖ terminal update refuses to replace a different checkout on the same port (3072.2996ms)
+✔ terminal update dry-run can preview a running legacy monolith (771.2725ms)
+✖ terminal update restores the previous release when final startup fails (1035.2208ms)
+✖ terminal update snapshots and restores a checkout runtime with no pointer (102.6794ms)
+✔ legacy monolith layouts skip new-runtime snapshot requirements (7.2526ms)
+✖ a successful retry prunes its pre-existing terminal snapshot (16.33ms)
+✖ a crash before snapshot pointer commit leaves the checkout bootable (86.0314ms)
+✔ a regular-file fsync failure prevents snapshot pointer activation (82.3464ms)
+✔ snapshot durability syncs the release parent before pointer commit (0.9539ms)
+✖ archive updates keep the harness bootstrap stable and activate a versioned release (2883.2376ms)
+✔ update status uses operation IDs and an exclusive worker lock (2890.5384ms)
+✔ a versioned core resolves installation artifacts from the stable server root (3086.5719ms)
+ℹ tests 119
+ℹ suites 0
+ℹ pass 92
+ℹ fail 27
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 28850.502
+
+✖ failing tests:
+
+test at tests\dashboard-update-git.test.mjs:43:1
+✖ advancing the release also advances manifests and future builds (1188.8625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  null !== 0
+  
+      at run (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/dashboard-update-git.test.mjs:21:10)
+      at TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/dashboard-update-git.test.mjs:66:3)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\dashboard-update-route.test.mjs:104:1
+✖ the packed update endpoint enables archive-backed updates without Git metadata (7.4236ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  null !== 0
+  
+      at TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/dashboard-update-route.test.mjs:139:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\dashboard-update-runtime.test.mjs:238:1
+✖ dashboard restart launches the active verified release (1053.5309ms)
+  [Error: EBUSY: resource busy or locked, rmdir 'C:\Users\Yousif\AppData\Local\Temp\roblox-mcp-update-zgqEA8\.roblox-mcp-releases\release-restart-active'] { errno: -4082, code: 'EBUSY', syscall: 'rmdir', path: 'C:\\Users\\Yousif\\AppData\\Local\\Temp\\roblox-mcp-update-zgqEA8\\.roblox-mcp-releases\\release-restart-active' }
+
+test at tests\dashboard-update-runtime.test.mjs:266:1
+✖ status reporting cannot interrupt a successful release activation (947.7823ms)
+  [Error: EBUSY: resource busy or locked, rmdir 'C:\Users\Yousif\AppData\Local\Temp\roblox-mcp-update-brUj2m\.roblox-mcp-releases\release-status-write-failure'] { errno: -4082, code: 'EBUSY', syscall: 'rmdir', path: 'C:\\Users\\Yousif\\AppData\\Local\\Temp\\roblox-mcp-update-brUj2m\\.roblox-mcp-releases\\release-status-write-failure' }
+
+test at tests\dashboard-update-runtime.test.mjs:295:1
+✖ dashboard updater refuses to signal a reused or mismatched core PID (495.117ms)
+  [Error: EBUSY: resource busy or locked, rmdir 'C:\Users\Yousif\AppData\Local\Temp\roblox-mcp-update-ph9nmy'] { errno: -4082, code: 'EBUSY', syscall: 'rmdir', path: 'C:\\Users\\Yousif\\AppData\\Local\\Temp\\roblox-mcp-update-ph9nmy' }
+
+test at tests\dashboard-update-runtime.test.mjs:320:1
+✖ a late checkout conflict removes the inactive candidate release (502.3583ms)
+  [Error: EBUSY: resource busy or locked, rmdir 'C:\Users\Yousif\AppData\Local\Temp\roblox-mcp-update-hfzfHl'] { errno: -4082, code: 'EBUSY', syscall: 'rmdir', path: 'C:\\Users\\Yousif\\AppData\\Local\\Temp\\roblox-mcp-update-hfzfHl' }
+
+test at tests\dashboard-update-runtime.test.mjs:350:1
+✖ dashboard updater restores the previous build when final startup fails (1197.1526ms)
+  [Error: EBUSY: resource busy or locked, rmdir 'C:\Users\Yousif\AppData\Local\Temp\roblox-mcp-update-6Wj1mK'] { errno: -4082, code: 'EBUSY', syscall: 'rmdir', path: 'C:\\Users\\Yousif\\AppData\\Local\\Temp\\roblox-mcp-update-6Wj1mK' }
+
+test at tests\dashboard-update-runtime.test.mjs:382:1
+✖ dashboard updater rolls back when the final core process cannot spawn (1072.8556ms)
+  [Error: EBUSY: resource busy or locked, rmdir 'C:\Users\Yousif\AppData\Local\Temp\roblox-mcp-update-bdA8tl'] { errno: -4082, code: 'EBUSY', syscall: 'rmdir', path: 'C:\\Users\\Yousif\\AppData\\Local\\Temp\\roblox-mcp-update-bdA8tl' }
+
+test at tests\dashboard-update-runtime.test.mjs:410:1
+✖ dashboard updater force-stops a hung candidate before rollback (1511.1644ms)
+  [Error: EBUSY: resource busy or locked, rmdir 'C:\Users\Yousif\AppData\Local\Temp\roblox-mcp-update-tvWBnY'] { errno: -4082, code: 'EBUSY', syscall: 'rmdir', path: 'C:\\Users\\Yousif\\AppData\\Local\\Temp\\roblox-mcp-update-tvWBnY' }
+
+test at tests\dashboard-update-runtime.test.mjs:445:3
+✖ release activation remains bootable after crash at after-release-dist (583.5154ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== null
+  
+      at crashActivation (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/dashboard-update-runtime.test.mjs:199:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/dashboard-update-runtime.test.mjs:448:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\dashboard-update-runtime.test.mjs:445:3
+✖ release activation remains bootable after crash at after-release-dependencies (637.2746ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== null
+  
+      at crashActivation (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/dashboard-update-runtime.test.mjs:199:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/dashboard-update-runtime.test.mjs:448:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\dashboard-update-runtime.test.mjs:445:3
+✖ release activation remains bootable after crash at after-checkout (659.8987ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== null
+  
+      at crashActivation (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/dashboard-update-runtime.test.mjs:199:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/dashboard-update-runtime.test.mjs:448:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\dashboard-update-runtime.test.mjs:445:3
+✖ release activation remains bootable after crash at after-release-pointer (646.4541ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== null
+  
+      at crashActivation (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/dashboard-update-runtime.test.mjs:199:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/dashboard-update-runtime.test.mjs:448:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\harness-dashboard.test.mjs:371:1
+✖ background service installer supports native managers and on-demand removal in dry runs (0.8592ms)
+  Error: Could not determine the macOS user ID for launchd.
+      at applyLaunchdService (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/src/shared/background-service-install.mjs:176:11)
+      at applyBackgroundService (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/src/shared/background-service-install.mjs:35:12)
+      at TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/harness-dashboard.test.mjs:378:30)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests\harness-dashboard.test.mjs:398:1
+✖ background startup status follows each platform's native registration (2.0206ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   configPath: '\\Users\\test\\Library\\LaunchAgents\\com.roblox-mcp.core.plist',
+  -   configPath: '/Users/test/Library/LaunchAgents/com.roblox-mcp.core.plist',
+      enabled: true,
+      manager: 'launchd',
+      supported: true
+    }
+  
+      at TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/harness-dashboard.test.mjs:399:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { supported: true, enabled: true, manager: 'launchd', configPath: '\\Users\\test\\Library\\LaunchAgents\\com.roblox-mcp.core.plist' },
+    expected: { supported: true, enabled: true, manager: 'launchd', configPath: '/Users/test/Library/LaunchAgents/com.roblox-mcp.core.plist' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\harness-dashboard.test.mjs:445:1
+✖ skill installation targets only compatible detected harnesses (1.2978ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /^npx(?:\.cmd)?$/. Input:
+  
+  'node.exe'
+  
+      at TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/harness-dashboard.test.mjs:482:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'node.exe',
+    expected: /^npx(?:\.cmd)?$/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests\harness-dashboard.test.mjs:551:1
+✖ background service installer starts each native manager immediately (9.7868ms)
+  Error: Could not determine the macOS user ID for launchd.
+      at applyLaunchdService (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/src/shared/background-service-install.mjs:176:11)
+      at applyBackgroundService (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/src/shared/background-service-install.mjs:35:12)
+      at TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/harness-dashboard.test.mjs:569:11)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests\harness-dashboard.test.mjs:714:1
+✖ packaged Roblox MCP skill enforces modern inspection and execution defaults (1.1209ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /^---\nname: roblox-mcp\n/m. Input:
+  
+  '---\r\n' +
+    'name: roblox-mcp\r\n' +
+    'description: Inspect, search, debug, and intentionally modify a connected Roblox client through roblox-executor-mcp or roblox-client-mcp. Use for live instance or script inspection, Luau data probes, garbage-collector searches, remote inspection, client-side execution, Roblox UI interaction, and Roblox window capture.\r\n' +
+    '---\r\n' +
+    '\r\n' +
+    '# Roblox MCP\r\n' +
+    '\r\n' +
+    "Use the connected MCP server's live tool schemas as the source of truth for names, parameters, defaults, and limits.\r\n" +
+    '\r\n' +
+    '## Core decision rules\r\n' +
+    '\r\n' +
+    'Apply these defaults unless the task meets an exception in [references/runtime-patterns.md](references/runtime-patterns.md):\r\n' +
+    '\r\n' +
+    '1. Prefer a specialized read tool over arbitrary Luau.\r\n' +
+    '2. Use `search-instances` for filtered instance discovery. It runs `QueryDescendants`; do not fetch every descendant and filter it manually.\r\n' +
+    '3. In custom Luau, use `QueryDescendants` for selector-expressible instance filters instead of a `GetDescendants()` scan.\r\n' +
+    '4. Use `filtergc` for garbage-collector searches instead of iterating `getgc`.\r\n' +
+    '5. Use `get-data-by-code` when the task needs values returned from Luau. Return compact raw Lua values; do not print data through `execute` or JSON-encode it manually.\r\n' +
+    '6. Use `execute` or `execute-file` only for intentional side effects or code that does not need to return data. Verify the effect with a focused read.\r\n' +
+    '\r\n' +
+    '## Operating workflow\r\n' +
+    '\r\n' +
+    '1. Select the client. Call `list-clients` when the target is unclear or multiple clients may exist, then call `set-active-client` if needed.\r\n' +
+    '2. Narrow with the cheapest specialized tool:\r\n' +
+    '   - Structure or instances: `search-instances`, or `get-descendants-tree` with `summaryOnly=true`.\r\n' +
+    '   - Known text or identifier: `script-grep`.\r\n' +
+    '   - Unknown implementation with known behavior: `semantic-search-scripts`.\r\n' +
+    '   - Source: `get-script-content` with a focused line range.\r\n' +
+    '   - Arbitrary compact values: `get-data-by-code`.\r\n' +
+    '3. Reduce the root, selector, range, filters, and limit before increasing any output budget.\r\n' +
+    '4. For GC or custom instance probes, follow [references/runtime-patterns.md](references/runtime-patterns.md).\r\n' +
+    "5. Mutate only when the user's request authorizes mutation. Use `execute` or `execute-file`, then verify the resulting state with a specialized read, a targeted `get-data-by-code` probe, or a small console read.\r\n" +
+    '6. For remotes, call `remote-spy` with `operation=list`, a small limit, and `summaryOnly=true` before requesting arguments or changing capture state.\r\n' +
+    '7. Report the observed result. Distinguish scheduled execution from verified state.\r\n' +
+    '\r\n' +
+    'Read [references/functions.md](references/functions.md) when choosing among tools. Read [references/bad-practices.md](references/bad-practices.md) before broad inspection, arbitrary Luau, remote-state changes, or client mutation.\r\n'
+  
+      at TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/harness-dashboard.test.mjs:722:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "---\r\nname: roblox-mcp\r\ndescription: Inspect, search, debug, and intentionally modify a connected Roblox client through roblox-executor-mcp or roblox-client-mcp. Use for live instance or script inspection, Luau data probes, garbage-collector searches, remote inspection, client-side execution, Roblox UI interaction, and Roblox window capture.\r\n---\r\n\r\n# Roblox MCP\r\n\r\nUse the connected MCP server's live tool schemas as the source of truth for names, parameters, defaults, and limits.\r\n\r\n## Core decision rules\r\n\r\nApply these defaults unless the task meets an exception in [references/runtime-patterns.md](references/runtime-patterns.md):\r\n\r\n1. Prefer a specialized read tool over arbitrary Luau.\r\n2. Use `search-instances` for filtered instance discovery. It runs `QueryDescendants`; do not fetch every descendant and filter it manually.\r\n3. In custom Luau, use `QueryDescendants` for selector-expressible instance filters instead of a `GetDescendants()` scan.\r\n4. Use `filtergc` for garbage-collector searches instead of iterating `getgc`.\r\n5. Use `get-data-by-code` when the task needs values returned from Luau. Return compact raw Lua values; do not print data through `execute` or JSON-encode it manually.\r\n6. Use `execute` or `execute-file` only for intentional side effects or code that does not need to return data. Verify the effect with a focused read.\r\n\r\n## Operating workflow\r\n\r\n1. Select the client. Call `list-clients` when the target is unclear or multiple clients may exist, then call `set-active-client` if needed.\r\n2. Narrow with the cheapest specialized tool:\r\n   - Structure or instances: `search-instances`, or `get-descendants-tree` with `summaryOnly=true`.\r\n   - Known text or identifier: `script-grep`.\r\n   - Unknown implementation with known behavior: `semantic-search-scripts`.\r\n   - Source: `get-script-content` with a focused line range.\r\n   - Arbitrary compact values: `get-data-by-code`.\r\n3. Reduce the root, selector, range, filters, and limit before increasing any output budget.\r\n4. For GC or custom instance probes, follow [references/runtime-patterns.md](references/runtime-patterns.md).\r\n5. Mutate only when the user's request authorizes mutation. Use `execute` or `execute-file`, then verify the resulting state with a specialized read, a targeted `get-data-by-code` probe, or a small console read.\r\n6. For remotes, call `remote-spy` with `operation=list`, a small limit, and `summaryOnly=true` before requesting arguments or changing capture state.\r\n7. Report the observed result. Distinguish scheduled execution from verified state.\r\n\r\nRead [references/functions.md](references/functions.md) when choosing among tools. Read [references/bad-practices.md](references/bad-practices.md) before broad inspection, arbitrary Luau, remote-state changes, or client mutation.\r\n",
+    expected: /^---\nname: roblox-mcp\n/m,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests\roblox-mcp-benchmark.test.mjs:1:1
+✖ tests\roblox-mcp-benchmark.test.mjs (283.1572ms)
+  'test failed'
+
+test at tests\stdio-adapter.test.mjs:454:1
+✖ adapter waits for an active update lock instead of racing to start the core (2370.3293ms)
+  Error: Adapter stdout closed.
+      at Interface.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/stdio-adapter.test.mjs:59:21)
+      at Interface.emit (node:events:521:24)
+      at Interface.close (node:internal/readline/interface:555:10)
+      at Socket.onend (node:internal/readline/interface:273:10)
+      at Socket.emit (node:events:521:24)
+      at endReadableNT (node:internal/streams/readable:1729:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+test at tests\terminal-update-runtime.test.mjs:83:1
+✖ terminal update deactivates a versioned core and the checkout adapter starts the rebuild (4908.92ms)
+  Error: The running core could not be verified from its process command; refusing to signal it.
+      at discoverActiveCore (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/scripts/terminal-update-runtime.mjs?test=1786946202599:51:11)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async activateCheckoutRuntime (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/scripts/terminal-update-runtime.mjs?test=1786946202599:85:20)
+      at async TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/terminal-update-runtime.test.mjs:133:22)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+
+test at tests\terminal-update-runtime.test.mjs:170:1
+✖ terminal update refuses to replace a different checkout on the same port (3072.2996ms)
+  [Error: EBUSY: resource busy or locked, rmdir 'C:\Users\Yousif\AppData\Local\Temp\roblox-mcp-owner-VLiCbP'] { errno: -4082, code: 'EBUSY', syscall: 'rmdir', path: 'C:\\Users\\Yousif\\AppData\\Local\\Temp\\roblox-mcp-owner-VLiCbP' }
+
+test at tests\terminal-update-runtime.test.mjs:229:1
+✖ terminal update restores the previous release when final startup fails (1035.2208ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /previous build was restored/. Input:
+  
+  'Error: The running core could not be verified from its process command; refusing to signal it.'
+  
+      at async TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/terminal-update-runtime.test.mjs:280:3)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: The running core could not be verified from its process command; refusing to signal it.
+        at discoverActiveCore (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/scripts/terminal-update-runtime.mjs?test=1786946202599:51:11)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async activateCheckoutRuntime (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/scripts/terminal-update-runtime.mjs?test=1786946202599:85:20)
+        at async waitForActual (node:assert:621:5)
+        at async strict.rejects (node:assert:744:25)
+        at async TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/terminal-update-runtime.test.mjs:280:3)
+        at async Test.run (node:internal/test_runner/test:1208:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:831:7),
+    expected: /previous build was restored/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests\terminal-update-runtime.test.mjs:292:1
+✖ terminal update snapshots and restores a checkout runtime with no pointer (102.6794ms)
+  Error: EPERM: operation not permitted, fsync
+      at async fsync (node:internal/fs/promises:1483:10)
+      at async fsCall (node:internal/fs/promises:1108:12)
+      at async syncTree (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/scripts/terminal-update-snapshot.mjs:50:5)
+      at async syncTree (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/scripts/terminal-update-snapshot.mjs:35:7)
+      at async syncTree (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/scripts/terminal-update-snapshot.mjs:35:7)
+      at async preserveCheckoutRuntime (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/scripts/terminal-update-snapshot.mjs:138:5)
+      at async TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/terminal-update-runtime.test.mjs:334:20)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    errno: -4048,
+    code: 'EPERM',
+    syscall: 'fsync'
+  }
+
+test at tests\terminal-update-runtime.test.mjs:381:1
+✖ a successful retry prunes its pre-existing terminal snapshot (16.33ms)
+  Error: EPERM: operation not permitted, fsync
+      at async fsync (node:internal/fs/promises:1483:10)
+      at async fsCall (node:internal/fs/promises:1108:12)
+      at async syncTree (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/scripts/terminal-update-snapshot.mjs:50:5)
+      at async syncTree (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/scripts/terminal-update-snapshot.mjs:35:7)
+      at async syncTree (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/scripts/terminal-update-snapshot.mjs:35:7)
+      at async preserveCheckoutRuntime (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/scripts/terminal-update-snapshot.mjs:138:5)
+      at async TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/terminal-update-runtime.test.mjs:390:3)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    errno: -4048,
+    code: 'EPERM',
+    syscall: 'fsync'
+  }
+
+test at tests\terminal-update-runtime.test.mjs:402:1
+✖ a crash before snapshot pointer commit leaves the checkout bootable (86.0314ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== null
+  
+      at TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/terminal-update-runtime.test.mjs:437:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\update-archive.test.mjs:38:1
+✖ archive updates keep the harness bootstrap stable and activate a versioned release (2883.2376ms)
+  AssertionError [ERR_ASSERTION]: tar (child): Cannot connect to C: resolve failed
+  tar: Child returned status 128
+  tar: Error is not recoverable: exiting now
+  
+  
+  2 !== 0
+  
+      at TestContext.<anonymous> (file:///C:/Users/Yousif/Projects/Work/Extensions/Nonomy-MCP/tests/update-archive.test.mjs:96:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
